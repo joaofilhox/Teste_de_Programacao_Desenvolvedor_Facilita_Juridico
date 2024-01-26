@@ -7,6 +7,7 @@
 - `Express: v4.18.2`
 - `Math.js: v12.3.0`
 - `PostgreSQL: v8.11.3`
+- `dotenv: v16.4.1`
 - `Nodemon: v3.0.3`
  ### Como Rodar o Projeto Localmente
 1. Instalação das Dependências
@@ -18,24 +19,32 @@ npm install
 
 2. Configuração do Banco de Dados
 Certifique-se de ter o PostgreSQL instalado e em execução.
-Crie um banco de dados chamado "gerenciamento_clientes".
-Configure as credenciais de acesso (host, port, user, password) no arquivo config/conexao.js.
+Crie um banco de dados chamado "client_management" e a tabela "clients".
+Configure as credenciais de acesso no arquivo no arquivo `.env`.
+```makefile
+PORT=8080                  //Define a porta em que o servidor estará acessível localmente.
+DB_HOST=localhost          //Especifica o local onde o banco de dados PostgreSQL está hospedado.
+DB_PORT=5432               //Indica a porta utilizada para se conectar ao banco de dados PostgreSQL.
+DB_USER=postgres           //Define o nome de usuário utilizado para acessar o banco de dados PostgreSQL.
+DB_PASS=postgres           //Indica a senha associada ao usuário do banco de dados PostgreSQL.
+DB_NAME=client_management  //Define o nome do banco de dados PostgreSQL a ser utilizado pelo aplicativo.
+```
 
-3. Execução do Servidor
+4. Execução do Servidor
 Inicie o servidor Node.js usando o seguinte comando:
 
 ```
 npm run dev
 ```
 
-O servidor será iniciado na porta 8080.
+O servidor estará acessível em http://localhost:8080.
 
 # 📁 Endpoints Disponíveis
-* Listar Clientes: GET /clientes
-* Calcular Rota: GET /calcularRota
-* Cadastrar Cliente: POST /cadastrar
+* Listar Clientes: GET `/clients`
+* Calcular Rota: GET `/calculateRoute`
+* Cadastrar Cliente: POST `/register`
 ## Documentação da API
-GET /clientes
+GET `/clients`
 Retorna a lista de todos os clientes cadastrados.
 
 Exemplo de resposta:
@@ -44,18 +53,18 @@ Exemplo de resposta:
 [
   {
     "id": 1,
-    "nome": "Cliente 1",
+    "name": "Cliente 1",
     "email": "cliente1@example.com",
-    "telefone": "123456789",
-    "coordenada_x": 10,
-    "coordenada_y": 20
+    "phone": "123456789",
+    "coordinate_x": 10,
+    "coordinate_y": 20
   },
   // ...
 ]
 
 ```
 
-GET /calcularRota
+GET `/calculateRoute`
 Calcula a rota mais eficiente para visitar todos os clientes.
 
 Exemplo de resposta:
@@ -64,36 +73,36 @@ Exemplo de resposta:
 [
   {
     "id": 1,
-    "nome": "Cliente 1",
+    "name": "Cliente 1",
     "email": "cliente1@example.com",
-    "telefone": "123456789",
+    "phone": "123456789",
     "x": 10,
     "y": 20
   },
   // ... (outros clientes na ordem da rota)
   {
     "id": 0,
-    "empresa": "Facilita Jurídico",
+    "company": "Facilita Jurídico",
     "email": "@facilita.jurídico",
-    "telefone": "15 99852-6603",
+    "phone": "15 99852-6603",
     "x": 0,
     "y": 0
   }
 ]
 ```
 
-POST /cadastrar
+POST `/register`
 Cadastra um novo cliente. Requer um corpo de requisição JSON com os dados do cliente.
 
 Exemplo de corpo de requisição:
 
 ```json
 {
-  "nome": "Novo Cliente",
+  "name": "Novo Cliente",
   "email": "novo_cliente@example.com",
-  "telefone": "987654321",
-  "coordenada_x": 15,
-  "coordenada_y": 25
+  "phone": "987654321",
+  "coordinate_x": 15,
+  "coordinate_y": 25
 }
 ```
 Exemplo de resposta:
@@ -101,11 +110,11 @@ Exemplo de resposta:
 ```json
 {
   "id": 2,
-  "nome": "Novo Cliente",
+  "name": "Novo Cliente",
   "email": "novo_cliente@example.com",
-  "telefone": "987654321",
-  "coordenada_x": 15,
-  "coordenada_y": 25
+  "phone": "987654321",
+  "coordinate_x": 15,
+  "coordinate_y": 25
 }
 ```
 
