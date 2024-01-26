@@ -1,10 +1,10 @@
-CREATE DATABASE gerenciamento_clientes;
+CREATE DATABASE client_management;
 
-CREATE TABLE clientes (
+CREATE TABLE clients (
     id SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
-    coordenada_x FLOAT,
-    coordenada_y FLOAT
+    phone VARCHAR(20) NOT NULL,
+    coordinate_x FLOAT,
+    coordinate_y FLOAT
 );
