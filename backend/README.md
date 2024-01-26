@@ -8,7 +8,9 @@
 - `Math.js: v12.3.0`
 - `PostgreSQL: v8.11.3`
 - `dotenv: v16.4.1`
+- `cors: v2.8.5`
 - `Nodemon: v3.0.3`
+
  ### Como Rodar o Projeto Localmente
 1. Instalação das Dependências
 Certifique-se de ter o Node.js e o npm instalados. Em seguida, execute o seguinte comando na raiz do projeto para instalar as dependências:
