@@ -20,7 +20,7 @@ npm run dev
 * React - Biblioteca JavaScript para construir interfaces de usuário.
 * Vite - Build tool rápido para projetos JavaScript/TypeScript.
 
-## Dependências Principais
+## :hammer: Dependências Principais
 * axios - Cliente HTTP para fazer requisições.
 * react-hook-form - Biblioteca para gerenciar formulários React.
 *react-router-dom - Roteamento para aplicativos React.
