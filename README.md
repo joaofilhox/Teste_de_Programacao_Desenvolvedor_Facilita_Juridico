@@ -32,7 +32,7 @@ Siga as instruções no README dentro da pasta para configurar e rodar o fronten
 
 # Contatos
 
-# Se você tiver alguma dúvida ou precisar de mais informações, entre em contato comigo:
+## Se você tiver alguma dúvida ou precisar de mais informações, entre em contato comigo:
 
 #### :bust_in_silhouette: LinkedIn: https://www.linkedin.com/in/joao-filho-lima/
 #### :email: Email: joaofilhomil@gmail.com
